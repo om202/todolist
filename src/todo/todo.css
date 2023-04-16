@@ -1,0 +1,24 @@
+#todoBox {
+  width: auto;
+  height: fit-content;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+#inputBox {
+  width: auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  color: grey;
+}

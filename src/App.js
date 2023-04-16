@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Todo from "./todo/todo";
+import { createContext, useState } from "react";
+
+export const AppContext = createContext();
 
 function App() {
+  const [todoText, setTodoText] = useState("");
+  const [todoList, setTodoList] = useState([]);
+
+  function updateTodoText(value) {
+    setTodoText(value);
+  }
+
+  function addTodoList() {
+    if (todoText !== "") {
+      setTodoList((prevTodo) => [...prevTodo, todoText]);
+      setTodoText("");
+    }
+  }
+
+  function deleteTodoList(id) {
+    setTodoList((prevTodo)=> [...prevTodo.slice(0, id), ...prevTodo.slice(id+1)]);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppContext.Provider
+      value={{ todoText, updateTodoText, todoList, addTodoList, deleteTodoList }}
+    >
+      <Todo />
+    </AppContext.Provider>
   );
 }
 

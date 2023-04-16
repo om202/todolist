@@ -1,0 +1,19 @@
+.listItemBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.listItem {
+  padding: 0.4rem;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: lightblue;
+  margin-bottom: 1rem;
+}
+
+.listItem::first-letter {
+  text-transform: capitalize;
+}

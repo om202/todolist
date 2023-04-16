@@ -1,0 +1,13 @@
+.todoInput {
+  padding: 0.5rem;
+  width: 16rem;
+  font-size: large;
+  border-radius: 4px;
+  background-color: none;
+  color: darkgreen;
+  border: 1px solid grey;
+}
+
+.todoInput:focus {
+  outline-color: lightgreen;
+}
