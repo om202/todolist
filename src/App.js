@@ -1,12 +1,18 @@
 import "./App.css";
 import Todo from "./todo/todo";
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import ls from "local-storage";
 
 export const AppContext = createContext();
 
 function App() {
   const [todoText, setTodoText] = useState("");
-  const [todoList, setTodoList] = useState([]);
+  const [todoList, setTodoList] = useState(ls.get("todolist") ?? []);
+
+  // on todoList updated
+  useEffect(() => {
+    ls.set("todolist", todoList);
+  }, [todoList]);
 
   function updateTodoText(value) {
     setTodoText(value);
@@ -20,12 +26,21 @@ function App() {
   }
 
   function deleteTodoList(id) {
-    setTodoList((prevTodo)=> [...prevTodo.slice(0, id), ...prevTodo.slice(id+1)]);
+    setTodoList((prevTodo) => [
+      ...prevTodo.slice(0, id),
+      ...prevTodo.slice(id + 1),
+    ]);
   }
 
   return (
     <AppContext.Provider
-      value={{ todoText, updateTodoText, todoList, addTodoList, deleteTodoList }}
+      value={{
+        todoText,
+        updateTodoText,
+        todoList,
+        addTodoList,
+        deleteTodoList,
+      }}
     >
       <Todo />
     </AppContext.Provider>
