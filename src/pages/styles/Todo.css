@@ -1,6 +1,5 @@
 #todoBox {
-  min-width: 420px;
-  width: 960px;
+  width: auto;
   background-color: #f7f7f7;
   height: fit-content;
   padding: 3rem;

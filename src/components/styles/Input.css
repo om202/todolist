@@ -1,10 +1,10 @@
 .todoInput {
   padding: 0.5rem;
-  width: auto;
+  width: 840px;
   font-size: large;
   border-radius: 4px;
   color: darkgreen;
-  border: 1px solid grey;
+  border: 1px solid #eee;
 }
 
 .todoInput:focus {

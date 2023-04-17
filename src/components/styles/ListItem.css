@@ -7,7 +7,10 @@
 
 .listItem {
   padding: 0.4rem;
+  text-overflow: ellipsis;
   width: 100%;
+  max-width: 840px;
+  overflow: hidden;
   padding-left: 1rem;
   padding-right: 1rem;
   background-color: lightblue;

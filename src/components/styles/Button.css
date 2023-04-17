@@ -1,9 +1,7 @@
 .button {
   border: none;
-  background-color: lightgreen;
-  color: black;
-  font-size: large;
-  padding: 0.5rem;
+  min-width: 120px;
+  padding: 0.4rem;
   height: fit-content;
   padding-left: 2rem;
   padding-right: 2rem;

@@ -7,6 +7,7 @@ function Input() {
   return (
     <div>
       <input
+        maxLength={64}
         className="todoInput"
         type="text"
         value={todoText}
