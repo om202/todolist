@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import "./todo.css";
-import Button from "../button/button";
-import Input from "../input/input";
+import "./styles/Todo.css";
+import Button from "../components/Button";
+import Input from "../components/Input";
 import { AppContext } from "../App";
-import ListItem from "../listItem/listItem";
+import ListItem from "../components/ListItem";
 
 function Todo() {
   const { addTodoList, todoList } = useContext(AppContext);

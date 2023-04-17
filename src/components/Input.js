@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
-import "./input.css";
+import "./styles/Input.css";
 import { AppContext } from "../App";
-import Button from "../button/button";
 
 function Input() {
   const { updateTodoText, todoText } = useContext(AppContext);

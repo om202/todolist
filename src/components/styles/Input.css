@@ -1,9 +1,8 @@
 .todoInput {
   padding: 0.5rem;
-  width: 16rem;
+  width: auto;
   font-size: large;
   border-radius: 4px;
-  background-color: none;
   color: darkgreen;
   border: 1px solid grey;
 }
