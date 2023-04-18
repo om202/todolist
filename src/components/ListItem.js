@@ -8,7 +8,7 @@ function ListItem({ text, id}) {
   return (
     <div className="listItemBox">
       <li className="listItem">{text}</li>
-      <Button text={'Delete'} onClickDo={()=>deleteTodoList(id)} type={'delete'}/>
+      <Button onClickDo={()=>deleteTodoList(id)} type={'done'}/>
     </div>
   );
 }

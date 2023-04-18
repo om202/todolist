@@ -4,19 +4,22 @@ import Button from "../components/Button";
 import Input from "../components/Input";
 import { AppContext } from "../App";
 import ListItem from "../components/ListItem";
+import { FaTasks } from "react-icons/fa";
 
 function Todo() {
   const { addTodoList, todoList } = useContext(AppContext);
   return (
     <div id="todoBox">
-      <span className="title">To-Do List</span>
+      <div className="titleBox">
+        <FaTasks className="title"/>
+        <span className="title">To-Do List</span>
+      </div>
       <div id="inputBox">
         <Input />
         <Button
-          text={"Add"}
           onClickDo={addTodoList}
           color={"green"}
-          type={"normal"}
+          type={"add"}
         />
       </div>
       {todoList.length !== 0 ? (

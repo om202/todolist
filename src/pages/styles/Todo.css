@@ -1,9 +1,9 @@
 #todoBox {
   width: auto;
-  background-color: #f7f7f7;
   height: fit-content;
   padding: 3rem;
   height: fit-content;
+  border: 1px solid #eee;
 }
 
 #inputBox {
@@ -22,5 +22,12 @@
 }
 
 .empty {
-  color: grey;
+  color: #606060;
+}
+
+.titleBox {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
 }
