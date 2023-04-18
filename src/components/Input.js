@@ -1,10 +1,19 @@
 import React from "react";
 import "./styles/Input.css";
 
-function Input({ value, onChangeDo, maxLength, onKeyDownDo }) {
+function Input({
+  value,
+  onChangeDo,
+  maxLength,
+  onKeyDownDo,
+  autoFocusActive,
+  placeHolderText,
+}) {
   return (
     <div>
       <input
+        placeholder={placeHolderText}
+        autoFocus={autoFocusActive}
         onKeyDown={(event) => {
           if (event.code === "Enter") {
             onKeyDownDo();

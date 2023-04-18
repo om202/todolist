@@ -17,22 +17,26 @@ function Todo() {
       </div>
       <div id="inputBox">
         <Input
+          placeHolderText="Write To-Do notes here..."
+          autoFocusActive={true}
           value={todoText}
           onChangeDo={updateTodoText}
-          maxLength={64}
+          maxLength={100}
           onKeyDownDo={addTodoList}
         />
         <Button onClickDo={addTodoList} color={"green"} type={"add"} />
       </div>
-      {todoList.length !== 0 ? (
-        <ol>
-          {todoList.map((t, id) => (
-            <ListItem key={id} text={t} id={id} />
-          ))}
-        </ol>
-      ) : (
-        <span className="empty">No Items</span>
-      )}
+      <div className="toDoListBox">
+        {todoList.length !== 0 ? (
+          <ol>
+            {todoList.map((t, id) => (
+              <ListItem key={id} text={t} id={id} />
+            ))}
+          </ol>
+        ) : (
+          <span className="empty">No Items</span>
+        )}
+      </div>
     </div>
   );
 }
