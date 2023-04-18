@@ -28,15 +28,12 @@
   color: #606060;
 }
 
-.titleBox {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  gap: 1rem;
-}
-
 .toDoListBox {
   width: 100%;
   max-height: 64vh;
   overflow: scroll;
+}
+
+.loginBox {
+  color: white;
 }

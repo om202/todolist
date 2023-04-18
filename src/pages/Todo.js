@@ -11,10 +11,6 @@ function Todo() {
     useContext(AppContext);
   return (
     <div id="todoBox">
-      <div className="titleBox">
-        <FaTasks className="title" />
-        <span className="title">To-Do List</span>
-      </div>
       <div id="inputBox">
         <Input
           placeHolderText="Write To-Do notes here..."

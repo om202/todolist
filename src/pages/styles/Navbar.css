@@ -1,0 +1,24 @@
+.navbar {
+  height: 70px;
+  width: 100%;
+  background-color: rgb(39, 39, 253);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  justify-content:space-between;
+}
+
+.navbarTitle {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.navbarTitle  * {
+  color: #eee;
+  font-size: 1.3rem;
+}

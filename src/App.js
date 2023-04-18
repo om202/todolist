@@ -2,6 +2,7 @@ import "./App.css";
 import Todo from "./pages/Todo";
 import { createContext, useEffect, useState } from "react";
 import ls from "local-storage";
+import Navbar from "./pages/Navbar";
 
 export const AppContext = createContext();
 
@@ -43,6 +44,7 @@ function App() {
       }}
     >
       <div id="main">
+        <Navbar/>
         <Todo />
       </div>
     </AppContext.Provider>
