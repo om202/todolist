@@ -7,20 +7,22 @@ import ListItem from "../components/ListItem";
 import { FaTasks } from "react-icons/fa";
 
 function Todo() {
-  const { addTodoList, todoList } = useContext(AppContext);
+  const { addTodoList, todoList, updateTodoText, todoText } =
+    useContext(AppContext);
   return (
     <div id="todoBox">
       <div className="titleBox">
-        <FaTasks className="title"/>
+        <FaTasks className="title" />
         <span className="title">To-Do List</span>
       </div>
       <div id="inputBox">
-        <Input />
-        <Button
-          onClickDo={addTodoList}
-          color={"green"}
-          type={"add"}
+        <Input
+          value={todoText}
+          onChangeDo={updateTodoText}
+          maxLength={64}
+          onKeyDownDo={addTodoList}
         />
+        <Button onClickDo={addTodoList} color={"green"} type={"add"} />
       </div>
       {todoList.length !== 0 ? (
         <ol>

@@ -1,17 +1,20 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./styles/Input.css";
-import { AppContext } from "../App";
 
-function Input() {
-  const { updateTodoText, todoText } = useContext(AppContext);
+function Input({ value, onChangeDo, maxLength, onKeyDownDo }) {
   return (
     <div>
       <input
-        maxLength={64}
+        onKeyDown={(event) => {
+          if (event.code === "Enter") {
+            onKeyDownDo();
+          }
+        }}
+        maxLength={maxLength}
         className="todoInput"
         type="text"
-        value={todoText}
-        onChange={(e) => updateTodoText(e.target.value)}
+        value={value}
+        onChange={(e) => onChangeDo(e.target.value)}
       />
     </div>
   );
