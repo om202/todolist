@@ -11,6 +11,20 @@
   font-weight: bold;
 }
 
+.smallMarginRight {
+  margin-right: 0.5rem;
+}
+
+.iconLight *{
+  color: #595959;
+}
+
+.flexCenter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .subtitle {
   font-size: 1.6rem;
   font-weight: 400;

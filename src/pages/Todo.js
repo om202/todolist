@@ -1,16 +1,21 @@
-import React, { useContext } from "react";
+import React, { useContext, memo } from "react";
 import "./styles/Todo.css";
 import Button from "../components/Button";
 import Input from "../components/Input";
 import { AppContext } from "../App";
 import ListItem from "../components/ListItem";
-import { FaTasks } from "react-icons/fa";
+import { FaGlobeAmericas } from "react-icons/fa";
 
 function Todo() {
   const { addTodoList, todoList, updateTodoText, todoText } =
     useContext(AppContext);
+  let user = "Public";
   return (
     <div id="todoBox">
+      <span className="flexCenter">
+        <FaGlobeAmericas className="smallMarginRight iconLight" />
+        {user}
+      </span>
       <div id="inputBox">
         <Input
           placeHolderText="Write To-Do notes here..."
@@ -37,4 +42,4 @@ function Todo() {
   );
 }
 
-export default Todo;
+export default memo(Todo);

@@ -44,7 +44,7 @@ function App() {
       }}
     >
       <div id="main">
-        <Navbar/>
+        <Navbar />
         <Todo />
       </div>
     </AppContext.Provider>
