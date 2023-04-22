@@ -7,10 +7,14 @@
 
 .listItem {
   padding: 0.4rem;
+  text-overflow: ellipsis;
   width: 100%;
+  max-width: 840px;
+  overflow: hidden;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: lightblue;
+  background-color: #f6f6f6;
+  border-radius: 4px;
   margin-bottom: 1rem;
 }
 

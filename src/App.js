@@ -1,7 +1,8 @@
 import "./App.css";
-import Todo from "./todo/todo";
+import Todo from "./pages/Todo";
 import { createContext, useEffect, useState } from "react";
 import ls from "local-storage";
+import Navbar from "./pages/Navbar";
 
 export const AppContext = createContext();
 
@@ -19,7 +20,7 @@ function App() {
   }
 
   function addTodoList() {
-    if (todoText !== "") {
+    if (todoText) {
       setTodoList((prevTodo) => [...prevTodo, todoText]);
       setTodoText("");
     }
@@ -42,7 +43,10 @@ function App() {
         deleteTodoList,
       }}
     >
-      <Todo />
+      <div id="main">
+        <Navbar />
+        <Todo />
+      </div>
     </AppContext.Provider>
   );
 }
