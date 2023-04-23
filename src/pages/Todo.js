@@ -11,7 +11,7 @@ function Todo() {
     useContext(AppContext);
   let user = "Public";
   return (
-    <div id="todoBox">
+    <div id="todoBox" className="box-shadow-0">
       <span className="flexCenter">
         <FaGlobeAmericas className="smallMarginRight iconLight" />
         {user}
@@ -22,7 +22,7 @@ function Todo() {
           autoFocusActive={true}
           value={todoText}
           onChangeDo={updateTodoText}
-          maxLength={100}
+          maxLength={64}
           onKeyDownDo={addTodoList}
         />
         <Button onClickDo={addTodoList} color={"green"} type={"add"} />

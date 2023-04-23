@@ -6,18 +6,17 @@
   background-color: white;
   border: 1px solid #eee;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 
 #inputBox {
   display: flex;
-  width: 100%;
   gap: 1rem;
   align-items: center;
-  justify-self: unset;
+  width: 100%;
   margin-top: 1.3rem;
   margin-bottom: 1rem;
 }
+
 
 .listItems {
   display: flex;

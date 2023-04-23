@@ -3,6 +3,12 @@ import Todo from "./pages/Todo";
 import { createContext, useEffect, useState } from "react";
 import ls from "local-storage";
 import Navbar from "./pages/Navbar";
+import {
+  Route,
+  Routes,
+} from "react-router-dom";
+import { Register } from "./pages/Register";
+import { Login } from "./pages/Login";
 
 export const AppContext = createContext();
 
@@ -45,7 +51,11 @@ function App() {
     >
       <div id="main">
         <Navbar />
-        <Todo />
+        <Routes>
+          <Route path="/" element={<Todo />}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
       </div>
     </AppContext.Provider>
   );

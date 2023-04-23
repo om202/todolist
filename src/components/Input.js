@@ -8,10 +8,12 @@ function Input({
   onKeyDownDo,
   autoFocusActive,
   placeHolderText,
-}) {
+  type,
+  }) {
   return (
     <div>
       <input
+        type={type}
         placeholder={placeHolderText}
         autoFocus={autoFocusActive}
         onKeyDown={(event) => {
@@ -21,7 +23,6 @@ function Input({
         }}
         maxLength={maxLength}
         className="todoInput"
-        type="text"
         value={value}
         onChange={(e) => onChangeDo(e.target.value)}
       />

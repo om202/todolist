@@ -1,12 +1,13 @@
 import React from "react";
 import "./styles/Button.css";
-import {BsCheckLg, BsPlusLg, BsTrash} from "react-icons/bs"
+import {BsCheckLg, BsPerson, BsPlusLg, BsTrash} from "react-icons/bs"
 
 const colorMap = {
   add: "lightgreen",
   done: "skyblue",
   delete: "pink",
   active: "lightblue",
+  login: "skyblue",
 };
 
 function findButtonIcon(type) {
@@ -17,6 +18,8 @@ function findButtonIcon(type) {
       return <BsTrash />;
     case "done":
       return <BsCheckLg/>;
+    case "login":
+      return <BsPerson/>;
     default:
       return null;
   }

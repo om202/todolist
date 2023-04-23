@@ -1,9 +1,9 @@
-.todoInput {
+.todoInput{
+  width: 100%;
   padding: 0.5rem;
-  width: 840px;
+  overflow: hidden;
   padding-left: 1rem;
   padding-right: 1rem;
-  font-size: large;
   border-radius: 4px;
   border: 1px solid #eee;
 }
