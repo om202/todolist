@@ -4,9 +4,10 @@ import Input from "../components/Input";
 import { AppContext } from "../App";
 import ListItem from "../components/ListItem";
 import { FaGlobeAmericas } from "react-icons/fa";
+import Button from "../components/Button";
 
 function Todo() {
-  const { addTodoList, todoList, updateTodoText, todoText } =
+  const { addTodoList, todoList, updateTodoText, todoText, deleteAll } =
     useContext(AppContext);
   let user = "Public";
   return (
@@ -31,6 +32,7 @@ function Todo() {
             {todoList.map((t, id) => (
               <ListItem key={id} todo={t} id={id} />
             ))}
+            <Button text={"Delete All"} onClickDo={deleteAll} type={"default"}/>
           </ol>
         ) : (
           <span className="empty">No Items 😕</span>
