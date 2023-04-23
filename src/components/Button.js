@@ -1,13 +1,16 @@
 import React from "react";
 import "./styles/Button.css";
-import {BsCheckLg, BsPerson, BsPlusLg, BsTrash} from "react-icons/bs"
+import {BsPlusLg, BsTrash} from "react-icons/bs"
+import { FaRegSmile } from "react-icons/fa";
+import {MdDoneAll, MdPerson} from "react-icons/md"
 
 const colorMap = {
   add: "lightgreen",
-  done: "skyblue",
-  delete: "pink",
+  done: "inherit",
+  delete: "inherit",
   active: "lightblue",
-  login: "skyblue",
+  login: "lightblue",
+  emoji: 'white',
 };
 
 function findButtonIcon(type) {
@@ -17,9 +20,11 @@ function findButtonIcon(type) {
     case "delete":
       return <BsTrash />;
     case "done":
-      return <BsCheckLg/>;
+      return <MdDoneAll/>;
     case "login":
-      return <BsPerson/>;
+      return <MdPerson/>;
+    case "emoji":
+      return <FaRegSmile/>
     default:
       return null;
   }
@@ -34,7 +39,7 @@ function Button({ text, onClickDo, type }) {
       style={{ backgroundColor: colorMap[type] }}
     >
       <div className="buttonContent">
-        {buttonIcon ? <div className="buttonIcon">{buttonIcon}</div> : null}
+        {buttonIcon ? <div className="">{buttonIcon}</div> : null}
         {text ? <div className="buttonText">{text}</div> : null}
       </div>
     </button>

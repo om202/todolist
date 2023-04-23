@@ -11,7 +11,7 @@ export const Register = () => {
 
   return (
     <div className="registerBox box-shadow-0">
-      <span className="title">Register</span>
+      <span className="title">Register 😎</span>
       <div className="registerInputForm">
         <Input
           placeHolderText={"Enter Username"}
@@ -44,7 +44,7 @@ export const Register = () => {
         <Button text={"Register"} type={"login"} />
       </div>
       <span>
-        Already have an account? <Link to={"/login"}>Login</Link>
+        Already have an account? 👉<Link to={"/login"}> Login</Link>
       </span>
     </div>
   );

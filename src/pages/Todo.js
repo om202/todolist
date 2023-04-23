@@ -1,6 +1,5 @@
 import React, { useContext, memo } from "react";
 import "./styles/Todo.css";
-import Button from "../components/Button";
 import Input from "../components/Input";
 import { AppContext } from "../App";
 import ListItem from "../components/ListItem";
@@ -20,22 +19,21 @@ function Todo() {
         <Input
           placeHolderText="Write To-Do notes here..."
           autoFocusActive={true}
-          value={todoText}
+          value={todoText.text}
           onChangeDo={updateTodoText}
           maxLength={64}
           onKeyDownDo={addTodoList}
         />
-        <Button onClickDo={addTodoList} color={"green"} type={"add"} />
       </div>
       <div className="toDoListBox">
         {todoList.length !== 0 ? (
           <ol>
             {todoList.map((t, id) => (
-              <ListItem key={id} text={t} id={id} />
+              <ListItem key={id} todo={t} id={id} />
             ))}
           </ol>
         ) : (
-          <span className="empty">No Items</span>
+          <span className="empty">No Items 😕</span>
         )}
       </div>
     </div>

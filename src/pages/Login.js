@@ -10,7 +10,7 @@ export const Login = () => {
 
   return (
     <div className="registerBox box-shadow-0">
-      <span className="title">Login</span>
+      <span className="title">Login ✌️</span>
       <div className="registerInputForm">
         <Input
           placeHolderText={"Enter Username"}
@@ -27,11 +27,10 @@ export const Login = () => {
           value={userPassword}
           onChangeDo={(e) => setUserPassword(e)}
         />
-
         <Button text={"Login"} type={"login"} />
       </div>
       <span>
-        No account? <Link to={"/register"}>Register</Link>
+        No account? 👉<Link to={"/register"}> Register</Link>
       </span>
     </div>
   );

@@ -1,8 +1,15 @@
 .listItemBox {
   display: flex;
-  gap: 1rem;
   justify-content: center;
   width: 100%;
+  background-color: #f6f6f6;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  align-items: center;
+}
+
+.listItemDone {
+  text-decoration:line-through;
 }
 
 .listItem {
@@ -12,9 +19,6 @@
   overflow: hidden;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: #f6f6f6;
-  border-radius: 4px;
-  margin-bottom: 1rem;
 }
 
 .listItem::first-letter {

@@ -13,7 +13,8 @@ import { Login } from "./pages/Login";
 export const AppContext = createContext();
 
 function App() {
-  const [todoText, setTodoText] = useState("");
+  const emptyText = {text: "", done: false};
+  const [todoText, setTodoText] = useState(emptyText);
   const [todoList, setTodoList] = useState(ls.get("todolist") ?? []);
 
   // on todoList updated
@@ -22,13 +23,20 @@ function App() {
   }, [todoList]);
 
   function updateTodoText(value) {
-    setTodoText(value);
+    setTodoText({text: value, done: false});
+  }
+
+  function markDone(id) {
+    setTodoList((prevTodo) => {
+      prevTodo[id].done = true;
+      return [...prevTodo]
+    });
   }
 
   function addTodoList() {
     if (todoText) {
       setTodoList((prevTodo) => [...prevTodo, todoText]);
-      setTodoText("");
+      setTodoText(emptyText);
     }
   }
 
@@ -45,6 +53,7 @@ function App() {
         todoText,
         updateTodoText,
         todoList,
+        markDone,
         addTodoList,
         deleteTodoList,
       }}
