@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "./styles/Input.css";
 import EmojiPicker from "emoji-picker-react";
 import Button from "./Button";
+import { useDispatch } from "react-redux";
 
 function Input({
-  value,
   onChangeDo,
   maxLength,
   onKeyDownDo,
@@ -13,6 +13,8 @@ function Input({
   type,
 }) {
   const [emojiShown, setEmojiShown] = useState(false);
+  const [value, setValue] = useState("");
+  const dispatch = useDispatch();
 
   function showHideEmoji() {
     if (emojiShown === true) {
@@ -35,13 +37,14 @@ function Input({
           autoFocus={autoFocusActive}
           onKeyDown={(event) => {
             if (event.code === "Enter") {
-              onKeyDownDo();
+              setValue("");
+              dispatch(onKeyDownDo(value));
             }
           }}
           maxLength={maxLength}
           className="todoInput"
           value={value}
-          onChange={(e) => onChangeDo(e.target.value)}
+          onChange={(e) => setValue(e.target.value)}
         />
         <Button type={"emoji"} onClickDo={showHideEmoji} />
       </div>

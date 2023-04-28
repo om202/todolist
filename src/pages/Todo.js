@@ -1,15 +1,17 @@
-import React, { useContext, memo } from "react";
+import React, { memo } from "react";
 import "./styles/Todo.css";
 import Input from "../components/Input";
-import { AppContext } from "../App";
 import ListItem from "../components/ListItem";
-import { FaGlobeAmericas } from "react-icons/fa";
 import Button from "../components/Button";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { addTodo, deleteAll } from "../services/store/actions/actions";
+import { useSelector } from "react-redux";
+import { getTodoList } from "../services/store/selectors/selectors";
 
 function Todo() {
-  const { addTodoList, todoList, updateTodoText, todoText, deleteAll } =
-    useContext(AppContext);
   let user = "Public";
+  const state = useSelector((state) => state);
+  const todoList = getTodoList(state);
   return (
     <div id="todoBox" className="box-shadow-0">
       <span className="flexCenter">
@@ -19,20 +21,18 @@ function Todo() {
       <div id="inputBox">
         <Input
           placeHolderText="Write To-Do notes here..."
+          onKeyDownDo={(text) => addTodo(text)}
           autoFocusActive={true}
-          value={todoText.text}
-          onChangeDo={updateTodoText}
           maxLength={64}
-          onKeyDownDo={addTodoList}
         />
       </div>
       <div className="toDoListBox">
         {todoList.length !== 0 ? (
           <ol>
-            {todoList.map((t, id) => (
-              <ListItem key={id} todo={t} id={id} />
+            {todoList.map((todo, id) => (
+              <ListItem key={id} todo={todo} id={id} />
             ))}
-            <Button text={"Delete All"} onClickDo={deleteAll} type={"default"}/>
+            <Button text={"Delete All"} type={"default"} onClickDo={deleteAll}/>
           </ol>
         ) : (
           <span className="empty">No Items 😕</span>

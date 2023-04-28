@@ -3,6 +3,7 @@ import "./styles/Button.css";
 import { BsPlusLg, BsTrash } from "react-icons/bs";
 import { FaRegSmile } from "react-icons/fa";
 import { MdDoneAll, MdPerson, MdRedo } from "react-icons/md";
+import { useDispatch } from "react-redux";
 
 const colorMap = {
   add: "lightgreen",
@@ -34,12 +35,13 @@ function findButtonIcon(type) {
   }
 }
 
-function Button({ text, onClickDo, type }) {
+function Button({ text, onClickDo, type, payload }) {
+  const dispatch = useDispatch()
   const buttonIcon = findButtonIcon(type);
   return (
     <button
       className="button"
-      onClick={() => onClickDo()}
+      onClick={() => dispatch(onClickDo(payload))}
       style={{ backgroundColor: colorMap[type] }}
     >
       <div className="buttonContent">

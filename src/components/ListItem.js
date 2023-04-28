@@ -1,15 +1,14 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./styles/ListItem.css";
 import Button from "./Button";
-import { AppContext } from "../App";
+import { deleteTodo, markDone, markUndone } from "../services/store/actions/actions";
 
 function ListItem({ todo, id}) {
-  const {deleteTodoList, markDone, markUnDone} = useContext(AppContext);
   return (
     <div className="listItemBox">
       {todo.done ? <li className="listItem listItemDone">{todo.text}</li> : <li className="listItem">{todo.text}</li>}
-      {todo.done ? <Button onClickDo={()=>markUnDone(id)} type={'undone'}/>: <Button onClickDo={()=>markDone(id)} type={'done'}/>}
-      <Button onClickDo={()=>deleteTodoList(id)} type={'delete'}/>
+      {todo.done ? <Button onClickDo={markUndone} type={'undone'} payload={id}/>: <Button onClickDo={markDone} type={'done'} payload={id}/>}
+      <Button onClickDo={deleteTodo} type={'delete'} payload={id}/>
     </div>
   );
 }
